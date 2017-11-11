@@ -1,0 +1,230 @@
+/******************
+
+Site/Project: Death of a Teacher
+Author: Eric Steinecke
+Created: 11/10/2017
+
+Table of Contents
+
+1. Imports/Fonts
+2. Generic Styles
+3. Header
+4. Body
+5. Footer
+6. Media Queries
+
+******************/
+
+/********** 1. Imports/Fonts **********/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@font-face {
+    font-family:'Gilligan';
+    src:url('../assets/gilligan.ttf');
+}
+
+@font-face {
+    font-family:'Trajan';
+    src:url('../assets/GoudyTrajan-Regular-trial.otf');
+}
+
+/********** 2. Generic Syles **********/
+
+h1 {font-family:'Gilligan',sans-serif; font-size:3.5em; margin-bottom:0.5em; text-transform: uppercase;}
+h2,h3,h4,h5 {font-family:'Trajan',serif; margin-bottom:0.5em;}
+img {max-width:100%;}
+.background-white {
+    background:#fff;
+    padding:2em 0;
+}
+p {font-family:'Roboto',sans-serif;}
+
+/********** 3. Header **********/
+
+header {background-color:#1e274b;}
+
+header::after {
+    content: '';
+    height: 7em;
+    display: block;
+    position: absolute;
+    width: 100%;
+    border-top: 7em solid #1e274b;
+    border-left: 100em solid transparent;
+}
+
+#logo {
+    max-height:120px;
+}
+
+nav li {
+    font-family:'Trajan', 'Trajan Pro', serif;
+    display:inline-block;
+    margin:2em;
+}
+
+nav a {
+    color:#fff;
+    font-size:1.3em;
+}
+
+nav a::after {
+    content:'';
+    height:2px;
+    display:block;
+    width:0;
+    background-color:#fff;
+    transition:width 0.3s;
+    
+}
+
+nav a:hover {
+    text-decoration: none;
+    color:#fff;
+}
+
+nav a:hover::after {
+    width:100%;
+    transition:width 0.3s;
+}
+
+nav a:focus {
+    color:#fff;
+    text-decoration: none;
+}
+
+/********** 4. Body **********/
+
+html {
+    overflow-x:hidden;
+}
+
+body {
+    background:url('../assets/background.png');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+}
+
+section {
+    margin:20rem 0;
+}
+
+article::before {
+    content: '';
+    height: 7em;
+    display: block;
+    border-bottom: 7em solid #fff;
+    border-right: 100em solid transparent;
+}
+
+article::after {
+    content:'';
+    height:7em;
+    display:block;
+    border-top:7em solid #fff;
+    border-left:100em solid transparent;
+}
+
+.slide .author-img {
+    background-image:url('../assets/guyfawkes.png');
+    background-size:60%;
+    background-repeat:no-repeat;
+    background-position:center;
+    padding:3em;
+    border-radius:50%;
+    margin:0 auto;
+    margin-bottom:1em;
+    height:150px;
+    width:150px;
+    background-color:#596289;
+}
+
+.slide h3 {
+    text-align: center;
+}
+
+.rating {
+    text-align: center;
+}
+
+.rating span {
+    margin:0.5em;
+}
+
+.rating span::before {
+    content:'\2606';
+    font-size:2em;
+}
+
+.rating.three-star > span:nth-child(1)::before, .rating.three-star > span:nth-child(2)::before, .rating.three-star > span:nth-child(3)::before {
+    content: '\2605';
+    color:#ff0;
+}
+
+.rating.four-star > span:nth-child(1)::before, .rating.four-star > span:nth-child(2)::before, .rating.four-star > span:nth-child(3)::before, .rating.four-star > span:nth-child(4)::before {
+    content: '\2605';
+    color:#ff0;
+}
+
+.rating.five-star > span:nth-child(1)::before, .rating.five-star > span:nth-child(2)::before, .rating.five-star > span:nth-child(3)::before, .rating.five-star > span:nth-child(4)::before, .rating.five-star > span:nth-child(5)::before {
+    content: '\2605';
+    color:#ff0;
+}
+
+.slide blockquote {
+    border:none;
+    font-style: italic;
+}
+
+#prevArrow, #nextArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3em;
+    cursor: pointer;
+    margin: 0 -1em;
+}
+
+#prevArrow {
+    left:0;
+}
+
+#nextArrow {
+    right:0;
+}
+
+/********** 5. Footer **********/
+
+footer {
+    background-color:#1e274b;
+    font-family:'Trajan', 'Trajan Pro', serif;
+    color:#fff;
+    min-height:100px;
+}
+
+footer section {
+    padding:0;
+    margin:2em 0 0;
+}
+
+/********** 6. Media Queries **********/
+
+@media (min-width:992px) {
+    footer section:last-child::after {
+        content: '...TILL DEATH DO US PART.';
+        font-family: 'Gilligan';
+        opacity: 0.05;
+        position: absolute;
+        right:0;
+        font-size: 5rem;
+        color:#fff;
+    }
+}
+
+@media (max-width:1280px) {
+    #prevArrow, #nextArrow {
+        display:none;
+    }
+}
