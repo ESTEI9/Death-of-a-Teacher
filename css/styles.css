@@ -3,6 +3,7 @@
 Site/Project: Death of a Teacher
 Author: Eric Steinecke
 Created: 11/10/2017
+Version: 1.1
 
 Table of Contents
 
@@ -34,24 +35,25 @@ Table of Contents
 h1 {font-family:'Gilligan',sans-serif; font-size:3.5em; margin-bottom:0.5em; text-transform: uppercase;}
 h2,h3,h4,h5 {font-family:'Trajan',serif; margin-bottom:0.5em;}
 img {max-width:100%;}
-.background-white {
-    background:#fff;
-    padding:2em 0;
-}
 p {font-family:'Roboto',sans-serif;}
 
 /********** 3. Header **********/
 
-header {background-color:#1e274b;}
+header {background-color:#1e274b; position: relative;}
 
-header::after {
+header::before {
     content: '';
-    height: 7em;
-    display: block;
     position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
-    border-top: 7em solid #1e274b;
-    border-left: 100em solid transparent;
+    height: 100%;
+    background-image: url(../assets/floralSwirl.svg);
+    background-position: center;
+    background-size: cover;
+    transform: rotateY(180deg);
+    opacity: 0.1;
+    background-repeat: no-repeat;
 }
 
 #logo {
@@ -113,18 +115,24 @@ section {
 
 article::before {
     content: '';
-    height: 7em;
+    height: 5em;
     display: block;
-    border-bottom: 7em solid #fff;
+    border-bottom: 5em solid #fff;
     border-right: 100em solid transparent;
 }
 
 article::after {
     content:'';
-    height:7em;
+    height:5em;
     display:block;
-    border-top:7em solid #fff;
+    border-top:5em solid #fff;
     border-left:100em solid transparent;
+}
+
+.background-white {
+    background:#fff;
+    padding:2em 0;
+    position:relative;
 }
 
 .slide .author-img {
@@ -202,6 +210,7 @@ footer {
     font-family:'Trajan', 'Trajan Pro', serif;
     color:#fff;
     min-height:100px;
+    position:relative;
 }
 
 footer section {
@@ -210,6 +219,21 @@ footer section {
 }
 
 /********** 6. Media Queries **********/
+@media (max-width:991px) {
+    footer::before {
+        content: '';
+        background: url(../assets/floralSwirl.svg);
+        background-repeat: no-repeat;
+        background-position: center left;
+        height: 100%;
+        width: 100%;
+        opacity: 0.1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotateY(180deg);
+    }
+}
 
 @media (min-width:992px) {
     footer section:last-child::after {
@@ -220,6 +244,24 @@ footer section {
         right:0;
         font-size: 5rem;
         color:#fff;
+    }
+    
+    .background-white::before {
+        content: '';
+        background: url(../assets/floralSwirl.svg);
+        background-repeat: no-repeat;
+        background-position: center left;
+        height: 100%;
+        display: block;
+        width: 100%;
+        opacity: 0.03;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    section:nth-child(even) .background-white::before {
+        transform:rotateY(180deg);
     }
 }
 
