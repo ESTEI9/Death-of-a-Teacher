@@ -1,3 +1,5 @@
+//V 1.152
+
 'use strict';
 
 // Init Variables
@@ -55,7 +57,7 @@ jQuery(document).ready(function($){
         
         $('#reviews-slider').append(
         "<div class='slide'>\
-        <div class='author-img' style='background-image:url("+picUrl+");'></div>'\
+        <div class='author-img' style='background-image:url("+picUrl+");'></div>\
         <h3>"+author+"</h3>\
         <div class='rating "+reviews[i].rating+"-star'>\
             <span></span><span></span><span></span><span></span><span></span>\
