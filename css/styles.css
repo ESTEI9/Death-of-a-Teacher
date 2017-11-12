@@ -3,7 +3,7 @@
 Site/Project: Death of a Teacher
 Author: Eric Steinecke
 Created: 11/10/2017
-Version: 1.1
+Version: 1.15
 
 Table of Contents
 
@@ -60,6 +60,10 @@ header::before {
     max-height:120px;
 }
 
+nav ul {
+    padding:0;
+}
+
 nav li {
     font-family:'Trajan', 'Trajan Pro', serif;
     display:inline-block;
@@ -98,19 +102,14 @@ nav a:focus {
 
 /********** 4. Body **********/
 
-html {
-    overflow-x:hidden;
-}
-
 body {
     background:url('../assets/background.png');
     background-size:cover;
-    background-repeat:no-repeat;
-    background-attachment: fixed;
+    overflow-x:hidden;
 }
 
 section {
-    margin:20rem 0;
+    margin:15rem 0;
 }
 
 article::before {
@@ -219,7 +218,30 @@ footer section {
 }
 
 /********** 6. Media Queries **********/
+@media (max-width:767px) {
+    h1,h2 {text-align: center;}
+    nav {
+        display:table;
+        margin:0 auto;
+        float:none;
+    }
+    nav li {
+        display:block;
+        margin:1em;
+    }
+}
+
+
 @media (max-width:991px) {
+    header {
+        text-align: center;
+    }
+    section {
+        margin:10rem 0;
+    }
+    footer {
+        text-align: center;
+    }
     footer::before {
         content: '';
         background: url(../assets/floralSwirl.svg);
@@ -236,6 +258,12 @@ footer section {
 }
 
 @media (min-width:992px) {
+    body {
+        background-attachment: fixed;
+    }
+    nav {
+        float:right;
+    }
     footer section:last-child::after {
         content: '...TILL DEATH DO US PART.';
         font-family: 'Gilligan';
