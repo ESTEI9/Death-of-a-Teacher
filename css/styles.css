@@ -3,7 +3,7 @@
 Site/Project: Death of a Teacher
 Author: Eric Steinecke
 Created: 11/10/2017
-Version: 1.151
+Version: 1.152
 
 Table of Contents
 
@@ -117,6 +117,7 @@ article::before {
     height: 5em;
     display: block;
     border-bottom: 5em solid #fff;
+    border-right: 100em solid transparent;
 }
 
 article::after {
@@ -124,6 +125,7 @@ article::after {
     height:5em;
     display:block;
     border-top:5em solid #fff;
+    border-left:100em solid transparent;
 }
 
 .background-white {
