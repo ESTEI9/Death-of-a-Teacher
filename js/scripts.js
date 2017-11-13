@@ -1,4 +1,4 @@
-//V 1.152
+//V 1.21
 
 'use strict';
 
@@ -56,7 +56,7 @@ jQuery(document).ready(function($){
         e.preventDefault();
         let content = ($(this).text() === 'Read More...') ? 'Read Less...' : 'Read More...';
         $(this).text(content);
-        $(this).next('div.read-more').toggleClass('open');
+        $(this).next('div.read-more').toggleClass('open').scrollTop(0);
     });
     
     for (let i=0; i<reviews.length; i++) {

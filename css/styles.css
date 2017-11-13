@@ -3,7 +3,7 @@
 Site/Project: Death of a Teacher
 Author: Eric Steinecke
 Created: 11/10/2017
-Version: 1.2
+Version: 1.21
 
 Table of Contents
 
@@ -158,13 +158,12 @@ p.excerpt {
 #author blockquote::before {
     content: "‘";
     font-size: 20em;
-    color: #a98157;
+    color: #dedede;
     position: absolute;
     top: -0.38em;
     left: -0.18em;
     font-family: serif;
     height: 0;
-    opacity: 0.25;
 }
 
 span.subtitle {
@@ -355,6 +354,7 @@ footer section {
         background: url(../assets/floralSwirl.svg);
         background-repeat: no-repeat;
         background-position: center left;
+        background-size:contain;
         height: 100%;
         display: block;
         width: 100%;
