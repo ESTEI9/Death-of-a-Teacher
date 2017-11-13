@@ -341,7 +341,7 @@ footer section {
         float:right;
     }
     footer section:last-child::after {
-        content: '...TILL DEATH DO US PART.';
+        content: 'TEACH TILL DEATH DO US PART...';
         font-family: 'Gilligan';
         opacity: 0.05;
         position: absolute;
