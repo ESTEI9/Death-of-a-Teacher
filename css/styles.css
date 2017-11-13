@@ -3,7 +3,7 @@
 Site/Project: Death of a Teacher
 Author: Eric Steinecke
 Created: 11/10/2017
-Version: 1.152
+Version: 1.2
 
 Table of Contents
 
@@ -33,9 +33,13 @@ Table of Contents
 /********** 2. Generic Syles **********/
 
 h1 {font-family:'Gilligan',sans-serif; font-size:3.5em; margin-bottom:0.5em; text-transform: uppercase;}
-h2,h3,h4,h5 {font-family:'Trajan',serif; margin-bottom:0.5em;}
+h2,h3,h4,h5 {font-family:'Trajan',serif; margin:1em 0 0.7em;}
 img {max-width:100%;}
-p {font-family:'Roboto',sans-serif;}
+p {font-family:'Roboto',sans-serif; font-size:1.1em;}
+q {quotes:"“" "”" "‘" "’";}
+q::before {content: open-quote;}
+q::after {content: close-quote;}
+.slide {text-align: center;}
 
 /********** 3. Header **********/
 
@@ -134,7 +138,68 @@ article::after {
     position:relative;
 }
 
-.slide .author-img {
+p.excerpt {
+    font-style: italic;
+    line-height: 1.7em;
+    font-size: 1.1em;
+    border-left:5px solid #eee;
+    padding-left:1.5em;
+    color:#777;
+}
+
+#author blockquote {
+    position: relative;
+    border: none;
+    font-style: italic;
+    padding: 1em 3em;
+    font-family: 'Trajan',serif;
+}
+
+#author blockquote::before {
+    content: "‘";
+    font-size: 20em;
+    color: #a98157;
+    position: absolute;
+    top: -0.38em;
+    left: -0.18em;
+    font-family: serif;
+    height: 0;
+    opacity: 0.25;
+}
+
+span.subtitle {
+    display: block;
+    margin: -1em 0 1em 1em;
+    font-size: 1.5em;
+    font-family: 'Trajan',serif;
+    font-style: italic;
+    color: #aaa;
+}
+
+a.read-more-toggle {
+    text-align: center;
+    font-family: 'Trajan',serif;
+    font-size: 1.2em;
+    padding: 1em;
+    background-color: #9d806f;
+    color: #fff;
+    text-decoration: none;
+    display:none;
+    max-width: 300px;
+    margin: 1em auto;
+}
+
+ul#screenplays {
+    padding-left:0;
+}
+
+ul#screenplays li {
+    font-style: italic;
+    list-style:none;
+    font-size:1.1em;
+}
+
+.slide .review-img {
     background-image:url('../assets/guyfawkes.png');
     background-size:60%;
     background-repeat:no-repeat;
@@ -148,11 +213,7 @@ article::after {
     background-color:#596289;
 }
 
-.slide h3 {
-    text-align: center;
-}
-
-.rating {
+.slide h3, .rating {
     text-align: center;
 }
 
@@ -180,8 +241,7 @@ article::after {
     color:#ff0;
 }
 
-.slide blockquote {
-    border:none;
+.slide q {
     font-style: italic;
 }
 
@@ -218,7 +278,14 @@ footer section {
 }
 
 /********** 6. Media Queries **********/
-@media (max-width:767px) {
+
+@media (min-width:481px) { /*small screens and up*/
+    body {
+        background-attachment: fixed;
+    }
+}
+
+@media (max-width:767px) { /*medium screens and down*/
     h1,h2 {text-align: center;}
     nav {
         display:table;
@@ -229,10 +296,23 @@ footer section {
         display:block;
         margin:1em;
     }
+    a.read-more-toggle {
+        display:block;
+    }
+    div.read-more {
+        max-height:0;
+        overflow:hidden;
+        margin-top:2em;
+        transition:all 0.5s;
+    }
+    div.read-more.open {
+        max-height:300px;
+        overflow-y:scroll;
+        transition:all 0.5s;
+    }
 }
 
-
-@media (max-width:991px) {
+@media (max-width:991px) { /*large screens and down*/
     header {
         text-align: center;
     }
@@ -257,10 +337,7 @@ footer section {
     }
 }
 
-@media (min-width:992px) {
-    body {
-        background-attachment: fixed;
-    }
+@media (min-width:992px) { /*large screens and up*/
     nav {
         float:right;
     }
@@ -273,7 +350,6 @@ footer section {
         font-size: 5rem;
         color:#fff;
     }
-    
     .background-white::before {
         content: '';
         background: url(../assets/floralSwirl.svg);
@@ -287,11 +363,12 @@ footer section {
         top: 0;
         left: 0;
     }
-
     section:nth-child(even) .background-white::before {
         transform:rotateY(180deg);
     }
 }
+
+/* Other Adjustments */
 
 @media (max-width:1280px) {
     #prevArrow, #nextArrow {

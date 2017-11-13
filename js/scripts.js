@@ -51,18 +51,26 @@ jQuery(document).ready(function($){
             scrollTop: hash.offset().top
         }, 800);
     });
+    
+    $('a.read-more-toggle').click(function(e){
+        e.preventDefault();
+        let content = ($(this).text() === 'Read More...') ? 'Read Less...' : 'Read More...';
+        $(this).text(content);
+        $(this).next('div.read-more').toggleClass('open');
+    });
+    
     for (let i=0; i<reviews.length; i++) {
         let picUrl = (reviews[i].picUrl === '') ? 'assets/guyfawkes.png' : reviews[i].picUrl;
         let author = (reviews[i].author === '') ? 'Anonymous' : reviews[i].author;
         
         $('#reviews-slider').append(
         "<div class='slide'>\
-        <div class='author-img' style='background-image:url("+picUrl+");'></div>\
+        <div class='review-img' style='background-image:url("+picUrl+");'></div>\
         <h3>"+author+"</h3>\
         <div class='rating "+reviews[i].rating+"-star'>\
             <span></span><span></span><span></span><span></span><span></span>\
         </div>\
-        <blockquote>"+reviews[i].quote+"</blockquote>\
+        <q>"+reviews[i].quote+"</q>\
         </div>"
         );
     }
