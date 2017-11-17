@@ -3,7 +3,7 @@
 Site/Project: Death of a Teacher
 Author: Eric Steinecke
 Created: 11/10/2017
-Version: 1.21
+Version: 1.25
 
 Table of Contents
 
@@ -39,7 +39,7 @@ p {font-family:'Roboto',sans-serif; font-size:1.1em;}
 q {quotes:"“" "”" "‘" "’";}
 q::before {content: open-quote;}
 q::after {content: close-quote;}
-.slide {text-align: center;}
+/*.slide {text-align: center;}*/
 
 /********** 3. Header **********/
 
@@ -198,7 +198,11 @@ ul#screenplays li {
     font-size:1.1em;
 }
 
-.slide .review-img {
+.review {
+    margin: 0 15px;
+}
+
+/*.slide .review-img {
     background-image:url('../assets/guyfawkes.png');
     background-size:60%;
     background-repeat:no-repeat;
@@ -212,7 +216,7 @@ ul#screenplays li {
     background-color:#596289;
 }
 
-.slide h3, .rating {
+.rating {
     text-align: center;
 }
 
@@ -242,6 +246,12 @@ ul#screenplays li {
 
 .slide q {
     font-style: italic;
+}*/
+
+.author-title {
+    display:block;
+    font-style:italic;
+    margin:-1em 0 1em;
 }
 
 #prevArrow, #nextArrow {
@@ -250,7 +260,6 @@ ul#screenplays li {
     transform: translateY(-50%);
     font-size: 3em;
     cursor: pointer;
-    margin: 0 -1em;
 }
 
 #prevArrow {
@@ -308,6 +317,12 @@ footer section {
         max-height:300px;
         overflow-y:scroll;
         transition:all 0.5s;
+    }
+    .review {
+        margin:0;
+        max-height: 300px;
+        overflow-y: scroll;
+        width: 100%;
     }
 }
 
