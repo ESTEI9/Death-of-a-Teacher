@@ -1,4 +1,4 @@
-//V 1.3
+//V 1.31
 
 'use strict';
 
@@ -8,6 +8,11 @@ let reviews = [
         author:'Richard H. Haldeman',
         title: 'Retired College Public Relations Director',
         quote: '<i>Death of a Teacher</i> is a love story on many levels...love of a profession, teaching, and especially those men and women who face their own personal demons while battling administrative bureaucracy, overcrowded classrooms, and lack of supplies in attempting to teach dozens of children. It is love of these children, too, who bring with them the problems of home and society. It is a story of a romantic, forbidden love, of love of family, and of a young man’s quest to find and love himself.  With sympathy and understanding, with humor and gentle satire, McShain tells this story through vibrant characters facing personal and physical handicaps.  That many find redemption through love is what sets this novel apart from earlier novels with schoolroom settings.'
+    },
+    {
+        author: 'Jacqueline Baker',
+        title: 'CEO, Bon Vivant Studio',
+        quote: `Not just a young teacher’s escapades in the public school system, Death probes the deeper strata of his lark of discovery. McShain's account of Dale Barrow’s journey to perdition and back higher than he ever dreamed will create in the reader's soul an afterlife all its own.`
     }
 ];
 
